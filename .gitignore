@@ -1,0 +1,5 @@
+.env
+.env.*
+!.env.example
+audio_ia.py
+audio.way
