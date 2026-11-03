@@ -2,7 +2,7 @@ import streamlit as st
 from main import perguntar
 
 
-st.set_page_config(page_title="Assistente IA", page_icon="💬")
+st.set_page_config(page_title="Assistente IA", page_icon="🤖")
 st.title("Assistente IA - EstiloBot")
 st.caption("Faça perguntas sobre a nossa empresa que nosso assistente de IA vai te responder.")
 
