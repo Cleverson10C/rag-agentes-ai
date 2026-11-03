@@ -57,7 +57,8 @@ O modelo recebe a pergunta junto com os documentos encontrados. Dessa forma, ele
 ```text
 RAG_Agentes_AI/
 ├── db/                 # Banco vetorial persistido pelo ChromaDB
-├── main.py             # Aplicação principal
+├── main.py             # Lógica RAG e modo de execução pelo terminal
+├── app.py              # Interface de conversa com Streamlit
 ├── .env                # Variáveis de ambiente locais
 ├── .env.example        # Modelo das variáveis necessárias
 ├── .gitignore          # Arquivos ignorados pelo Git
@@ -141,7 +142,17 @@ git commit -m "Remove arquivo .env do versionamento"
 
 ## Executando o projeto
 
-Com o ambiente virtual ativado, execute:
+Com o ambiente virtual ativado, você pode iniciar a interface de conversa:
+
+```powershell
+streamlit run app.py
+```
+
+O chatbot mantém o histórico durante a sessão e usa as mensagens anteriores
+para interpretar perguntas de acompanhamento. A conversa pode ser reiniciada
+pelo botão **Limpar conversa**.
+
+Para fazer uma pergunta diretamente pelo terminal, execute:
 
 ```powershell
 python main.py
@@ -239,12 +250,10 @@ Essa etapa ainda pode ser automatizada em um módulo específico de carregamento
 
 ## Limitações atuais
 
-Atualmente, o projeto possui algumas limitações:
+O projeto mantém algumas limitações:
 
-- A interação acontece pelo terminal;
 - A base de conhecimento precisa ser preparada previamente;
-- Ainda não existe uma interface web;
-- Não há histórico persistente de conversas;
+- O histórico do chatbot existe apenas enquanto a sessão do Streamlit estiver ativa;
 - Não existe autenticação de usuários;
 - A integração com WhatsApp ainda não foi implementada;
 - O sistema ainda não possui avaliação automática das respostas;
